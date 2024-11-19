@@ -1,0 +1,13 @@
+steps:
+  - id: 'terraform init'
+    name: 'hashicorp/terraform:1.0.0'
+    script: terraform init
+  - id: 'terraform plan'
+    name: 'hashicorp/terraform:1.0.0'
+    script: terraform plan -var="project_id=macro-approach-441906-c2"
+  - id: 'terraform apply'
+    name: 'hashicorp/terraform:1.0.0'
+    script: terraform apply  -var="project_id=macro-approach-441906-c2" --auto-approve
+
+options:
+  logging: CLOUD_LOGGING_ONLY
